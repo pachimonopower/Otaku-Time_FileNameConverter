@@ -25,7 +25,10 @@ try:
 		filename = './' + line[linkEndIndex + 1 : splitIndex]
 		
 		# get new filename
-		newFilename = './' + line[splitIndex + len(SplitChar) : len(line) - 1] + ".mp4"
+		temp = line[splitIndex + len(SplitChar) : len(line)]
+		temp = temp.replace('\r', '')
+		temp = temp.replace('\n', '')
+		newFilename = './' + temp + ".mp4"
 		
 		if os.path.isfile(filename):
 			os.rename(filename, newFilename)
