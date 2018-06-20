@@ -8,7 +8,7 @@ LinksFilename = 'links.txt'
 SplitChar = ' - '
 
 try:
-	links = open(LinksFilename)
+	links = open(LinksFilename, 'r', encoding="utf-8")
 
 	print('links file opened.')
 
